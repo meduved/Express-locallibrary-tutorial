@@ -13,7 +13,8 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://mongodbved:kajak@ds157233.mlab.com:57233/local_library_meduved';
+//var mongoDB = 'mongodb://mongodbved:kajak@ds157233.mlab.com:57233/local_library_meduved';
+var mongoDB = 'mongodb://localhost/LIBRARY';
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
