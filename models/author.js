@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var moment = require('moment')
 
 var Schema = mongoose.Schema;
 
@@ -23,6 +24,13 @@ AuthorSchema
 .virtual('url')
 .get(function () {
   return '/catalog/author/' + this._id;
+});
+
+// Virtual for author's URL
+AuthorSchema
+.virtual('date_of_birth_formatted')
+.get(function () {
+   if (this.date_of_birth!=null) {return moment(this.date_of_birth).format("DD/MM/YYYY")} else {return "";}
 });
 
 //Export model
